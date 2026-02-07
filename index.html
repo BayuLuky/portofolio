@@ -1,116 +1,207 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Profesional | [Nama Anda]</title>
+    <title>Portofolio Software Engineer | Bayu Luky Istanto</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <a href="#" class="logo">Porto<span>folio.</span></a>
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="#home" class="active">Home</a></li>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="logo">&lt;Dev/&gt;</a>
+            <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#skills">Tech Stack</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact" class="btn-nav">Contact</a></li>
             </ul>
-        </nav>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h3>Halo, nama saya</h3>
-            <h1>[Nama Anda]</h1>
-            <h3>Saya seorang <span class="typing-text"></span></h3>
-            <p>Menciptakan solusi digital yang estetis dan fungsional. Mari wujudkan ide cemerlang Anda menjadi kenyataan.</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-            <a href="#contact" class="btn">Hubungi Saya</a>
         </div>
-        <div class="hero-img">
-            <img src="https://via.placeholder.com/400" alt="Foto Profil">
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <p class="greeting">Hi, my name is</p>
+                <h1 class="name">Bayu Luky Istanto.</h1>
+                <h2 class="role">I build robust software solutions.</h2>
+                <p class="bio">
+                    Saya seorang Software Engineer yang berspesialisasi dalam membangun (dan terkadang merancang) pengalaman digital yang luar biasa. Saat ini, saya berfokus pada membangun produk yang skalabel dan efisien di [Sebutkan Perusahaan/Fokus Anda].
+                </p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
+                    <a href="link-ke-cv-anda.pdf" target="_blank" class="btn btn-outline">Unduh Resume</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                 <img src="https://via.placeholder.com/400x400?text=Dev+Photo" alt="Foto Profil">
+            </div>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="main-text">
-            <h2>Tentang <span>Saya</span></h2>
-            <h4>Pengembang Web & Desainer Kreatif</h4>
-            <p>Saya memiliki pengalaman dalam membangun website responsif dan aplikasi web modern. Fokus saya adalah pada penulisan kode yang bersih dan desain yang user-friendly. Saya selalu antusias mempelajari teknologi baru.</p>
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title"><span class="mono-num">01.</span> About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Halo! Saya [Nama Anda], seorang engineer yang gemar menciptakan sesuatu yang hidup di internet. Ketertarikan saya pada pengembangan perangkat lunak dimulai ketika [Cerita singkat awal mula Anda tertarik].
+                    </p>
+                    <p>
+                        Selama [X] tahun terakhir, saya telah bekerja di berbagai lingkungan, dari <a href="#">startup</a> hingga <a href="#">perusahaan korporat</a>. Prioritas utama saya adalah menulis kode yang bersih (clean code), mudah dipelihara (maintainable), dan diuji dengan baik.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <section id="skills" class="section skills">
+        <div class="container">
+            <h2 class="section-title"><span class="mono-num">02.</span> Technical Skills</h2>
+            <p class="section-subtitle">Berikut adalah teknologi yang saya gunakan secara aktif:</p>
             
             <div class="skills-grid">
-                <div class="skill-item"><i class="fab fa-html5"></i> HTML5</div>
-                <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</div>
-                <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
-                <div class="skill-item"><i class="fab fa-react"></i> React</div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Backend & DB</h3>
+                    <ul class="skill-list">
+                        <li>Node.js (Express)</li>
+                        <li>Python (Django/Flask)</li>
+                        <li>Java (Spring Boot)</li>
+                        <li>PostgreSQL</li>
+                        <li>MongoDB</li>
+                        <li>Redis</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Frontend</h3>
+                    <ul class="skill-list">
+                        <li>JavaScript (ES6+)</li>
+                        <li>TypeScript</li>
+                        <li>React.js</li>
+                        <li>Next.js</li>
+                        <li>Tailwind CSS</li>
+                        <li>HTML5 & CSS3</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools & DevOps</h3>
+                    <ul class="skill-list">
+                        <li>Git & GitHub</li>
+                        <li>Docker</li>
+                        <li>AWS (EC2, S3)</li>
+                        <li>CI/CD Pipelines</li>
+                        <li>Jest/Mocha (Testing)</li>
+                        <li>Linux Command Line</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="portfolio">
-        <div class="main-text">
-            <h2>Proyek <span>Terbaru</span></h2>
-        </div>
-        <div class="portfolio-content">
-            <div class="row">
-                <img src="https://via.placeholder.com/600x400" alt="Proyek 1">
-                <div class="layer">
-                    <h5>Website E-Commerce</h5>
-                    <p>Platform belanja online dengan fitur keranjang dan pembayaran.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+    <section id="experience" class="section experience">
+        <div class="container">
+            <h2 class="section-title"><span class="mono-num">03.</span> Where I've Worked</h2>
+            <div class="jobs-container">
+                <div class="job-card">
+                    <h3 class="job-role">Senior Software Engineer <span class="company">@ Perusahaan A</span></h3>
+                    <p class="job-duration">Jan 2022 - Sekarang</p>
+                    <ul class="job-details">
+                        <li>Memimpin migrasi sistem monolith legacy ke arsitektur microservices menggunakan Node.js dan Docker, mengurangi waktu deployment sebesar 40%.</li>
+                        <li>Mengembangkan fitur pembayaran baru yang terintegrasi dengan Stripe API, meningkatkan pendapatan sebesar 15%.</li>
+                        <li>Mentoring 3 junior developer dalam best practice React dan code review.</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="row">
-                <img src="https://via.placeholder.com/600x400" alt="Proyek 2">
-                <div class="layer">
-                    <h5>Aplikasi Mobile UI</h5>
-                    <p>Desain antarmuka aplikasi travel yang modern.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            <div class="row">
-                <img src="https://via.placeholder.com/600x400" alt="Proyek 3">
-                <div class="layer">
-                    <h5>Dashboard Admin</h5>
-                    <p>Sistem manajemen data visual dengan grafik analitik.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                <div class="job-card">
+                    <h3 class="job-role">Software Engineer <span class="company">@ Startup B</span></h3>
+                    <p class="job-duration">Jun 2019 - Des 2021</p>
+                    <ul class="job-details">
+                        <li>Membangun dashboard analitik real-time menggunakan React, Redux, dan WebSocket.</li>
+                        <li>Mengoptimalkan query database PostgreSQL yang meningkatkan kecepatan loading halaman sebesar 300ms.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <div class="main-text">
-            <h2>Hubungi <span>Saya</span></h2>
-            <p>Punya proyek impian? Mari diskusikan bersama.</p>
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title"><span class="mono-num">04.</span> Featured Projects</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/600x350?text=Project+Screenshot" alt="Proyek 1">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-Commerce API Platform</h3>
+                        <p class="project-description">
+                            Backend RESTful API yang tangguh untuk platform e-commerce skala besar. Menangani autentikasi (JWT), manajemen produk, keranjang belanja, dan integrasi payment gateway.
+                        </p>
+                        <ul class="project-tech">
+                            <li>Node.js</li>
+                            <li>Express</li>
+                            <li>MongoDB</li>
+                            <li>Redis</li>
+                            <li>Docker</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" target="_blank" aria-label="GitHub Link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" target="_blank" aria-label="External Link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/600x350?text=Project+Screenshot" alt="Proyek 2">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Task Management SaaS</h3>
+                        <p class="project-description">
+                            Aplikasi manajemen tugas kolaboratif (mirip Trello/Jira) dengan fitur drag-and-drop dan update real-time antar pengguna.
+                        </p>
+                        <ul class="project-tech">
+                            <li>React</li>
+                            <li>TypeScript</li>
+                            <li>Firebase</li>
+                            <li>Styled Components</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" target="_blank" aria-label="GitHub Link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" target="_blank" aria-label="External Link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="contact-form">
-            <form action="">
-                <input type="text" placeholder="Nama Anda" required>
-                <input type="email" placeholder="Email Anda" required>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Pesan Anda..." required></textarea>
-                <input type="submit" value="Kirim Pesan" class="btn">
-            </form>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="container contact-container">
+             <h2 class="section-title centered"><span class="mono-num">05.</span> Get In Touch</h2>
+             <p>Saya sedang terbuka untuk peluang kerja baru. Apakah Anda memiliki pertanyaan atau sekadar ingin menyapa, kotak masuk saya selalu terbuka. Saya akan mencoba yang terbaik untuk menghubungi Anda kembali!</p>
+             <a href="mailto:emailanda@contoh.com" class="btn btn-primary big-btn">Kirim Email</a>
+             
+             <div class="social-links">
+                 <a href="https://github.com/usernameanda" target="_blank"><i class="fab fa-github"></i></a>
+                 <a href="https://linkedin.com/in/usernameanda" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                 <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+             </div>
         </div>
     </section>
 
     <footer>
-        <p>Copyright &copy; 2024 dibuat dengan <i class="fas fa-heart"></i> oleh [Nama Anda]</p>
-        <a href="#home" class="top"><i class="fas fa-arrow-up"></i></a>
+        <p>Dirancang & Dibangun oleh [Nama Anda]. Di-host di GitHub Pages.</p>
     </footer>
 
     <script src="script.js"></script>
