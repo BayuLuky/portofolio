@@ -1,149 +1,550 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+
 <head>
     <meta charset="UTF-8">
+    <title>Portfolio Bayu Luky Istanto</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya</title>
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Bayu Luky Istanto | Full Stack Web Developer, Cloud Engineer & Software Tester">
+    <meta name="description"
+        content="Portfolio profesional Bayu Luky Istanto. Temukan beragam proyek inovatif di bidang web development, cloud computing, dan software testing. Web developer & cloud engineer dengan pengalaman CodeIgniter, PHP, JavaScript, Google Cloud Platform, API, dan QA.">
+    <meta name="keywords"
+        content="Bayu Luky Istanto, Portfolio, Full Stack Developer, Web Developer, Cloud Engineer, Software Tester, QA, JavaScript, PHP, CodeIgniter, Google Cloud Platform, Indonesia, Software Developer, Frontend Developer, Backend Developer, IT Portfolio, Project Portfolio, Software Quality Assurance, Tech Enthusiast, Programmer Indonesia, Portofolio Pengembang Web">
+
+    <meta name="author" content="Bayu Luky Istanto">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="language" content="id-ID">
+    <meta name="distribution" content="global">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Plus Jakarta Sans Font Preload & Stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- JavaScript -->
+    <script src="assets/js/index.js" defer></script>
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.jpg">
+    <link rel="icon" type="image/jpg" sizes="32x32" href="assets/favicon.jpg">
+    <link rel="icon" type="image/jpg" sizes="16x16" href="assets/favicon.jpg">
+    <link rel="manifest" href="assets/images/site.webmanifest">
+
 </head>
-<body>
 
-    <header id="header">
-        <div class="container nav-container">
-            <a href="#" class="logo">Hafiz<span>Aryan.</span></a> <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#works">Works</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+<body class="bg-bg text-muted font-sans antialiased selection:bg-white selection:text-black overflow-x-hidden w-full">
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div style="text-align: center;">
+            <div class="loader"></div>
+            <div class="loading-text">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-border">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4">
+            <div class="flex justify-between h-20 items-center">
+                <a href="#"
+                    class="text-2xl font-bold text-white tracking-tight border border-white px-3 py-1 font-mono">
+                    &lt;bayu /&gt;
+                </a>
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex space-x-8 text-sm font-medium" id="navbar-desktop">
+                    <a href="#" id="nav-home" class="hover:text-white transition-colors">Home</a>
+                    <a href="#about" id="nav-about" class="hover:text-white transition-colors">About</a>
+                    <a href="#work" id="nav-work" class="hover:text-white transition-colors">Work</a>
+                    <a href="#projects" id="nav-projects" class="hover:text-white transition-colors">Projects</a>
+                    <a href="#education" id="nav-education" class="hover:text-white transition-colors">Education</a>
+                    <a href="#contact" id="nav-contact" class="hover:text-white transition-colors">Contact</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMenu()" class="lg:hidden text-white text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="container hero-container">
-            <div class="hero-text">
-                <h3>Halo, Saya</h3>
-                <h1>Hafiz Aryan</h1>
-                <p>Mahasiswa & Pengembang Web yang antusias membangun sistem informasi dan solusi kreatif.</p>
-                <div class="social-hero">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-                <a href="#contact" class="btn">Hubungi Saya</a>
-            </div>
-            <div class="hero-img">
-                <img src="https://via.placeholder.com/400x400" alt="Profile Picture">
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-bg border-b border-border absolute w-full transition-all duration-300 ease-out opacity-100">
+            <div class="px-4 py-4 space-y-4 flex flex-col text-lg">
+                <a href="#" id="mobile-nav-home" class="block text-white">Intro</a>
+                <a href="#about" id="mobile-nav-about" class="block text-white">About</a>
+                <a href="#work" id="mobile-nav-work" class="block text-white">Work</a>
+                <a href="#projects" id="mobile-nav-projects" class="block text-white">Projects</a>
+                <a href="#education" id="mobile-nav-education" class="block text-white">Education</a>
+                <a href="#organization" id="mobile-nav-organization" class="block text-white">Organization</a>
+                <a href="#awards" id="mobile-nav-awards" class="block text-white">Awards</a>
+                <a href="#contact" id="mobile-nav-contact" class="block text-white">Contact</a>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-desc">
-                    <p>Saya adalah mahasiswa tingkat akhir yang memiliki pengalaman dalam **Web Development** dan **Software Testing**. Saya terbiasa menggunakan PHP Framework, JavaScript, SQL, dan layanan Google Cloud.</p>
-                    <p>Saya senang memecahkan masalah melalui kode dan terus belajar teknologi baru untuk meningkatkan kualitas perangkat lunak yang saya bangun.</p>
-                    
-                    <div class="skills-list">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                        <span>PHP / Laravel</span>
-                        <span>MySQL</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <div
+            class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-800/20 via-bg to-bg">
         </div>
-    </section>
 
-    <section id="works" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">My Works</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="card-img">
-                        <img src="https://via.placeholder.com/600x400" alt="Project 1">
-                    </div>
-                    <div class="card-body">
-                        <h3>Sistem Informasi Lab</h3>
-                        <p>Aplikasi manajemen laboratorium berbasis web menggunakan PHP dan MySQL.</p>
-                        <a href="#" class="btn-sm">Lihat Demo <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="card-img">
-                        <img src="https://via.placeholder.com/600x400" alt="Project 2">
-                    </div>
-                    <div class="card-body">
-                        <h3>Company Profile</h3>
-                        <p>Website profil perusahaan yang responsif dan modern.</p>
-                        <a href="#" class="btn-sm">Lihat Demo <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="card-img">
-                        <img src="https://via.placeholder.com/600x400" alt="Project 3">
-                    </div>
-                    <div class="card-body">
-                        <h3>Toko Online Sederhana</h3>
-                        <p>Platform e-commerce dengan fitur keranjang belanja.</p>
-                        <a href="#" class="btn-sm">Lihat Demo <i class="fas fa-arrow-right"></i></a>
-                    </div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <span
+                    class="text-white border border-border bg-surface px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-wider mb-6 inline-block">
+                    Available for Opportunities
+                </span>
+                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                    Hello, I am Bayu <br> 
+                    <span class="text-gray-500 text-2xl md:text-4xl block mt-2">Software Engineer.</span>
+                </h1>
+                <p class="text-lg md:text-xl max-w-xl leading-relaxed mb-8 text-gray-400">
+                    Explore my journey in building scalable software and robust architectures. If you're looking for a partner to turn complex problems into elegant solutions, let's connect.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects"
+                        class="bg-white text-black px-8 py-4 font-bold hover:bg-gray-200 transition flex items-center gap-2">
+                        View Projects <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact"
+                        class="border border-border text-white px-8 py-4 font-medium hover:bg-surface hover:border-white transition duration-300">
+                        Contact Me
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="section">
-        <div class="container">
-            <h2 class="section-title">Gallery</h2>
-            <p style="text-align: center; margin-bottom: 20px;">Dokumentasi kegiatan dan sertifikat.</p>
-            
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="https://via.placeholder.com/600x400/007bff/fff?text=Sertifikat+1" alt="Gallery 1"></div>
-                    <div class="swiper-slide"><img src="https://via.placeholder.com/600x400/28a745/fff?text=Kegiatan+Kampus" alt="Gallery 2"></div>
-                    <div class="swiper-slide"><img src="https://via.placeholder.com/600x400/dc3545/fff?text=Project+Meeting" alt="Gallery 3"></div>
-                    <div class="swiper-slide"><img src="https://via.placeholder.com/600x400/ffc107/fff?text=Workshop" alt="Gallery 4"></div>
+    <!-- About Section -->
+    <section id="about" class="py-24 border-t border-border">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-white mb-2">About Me</h2>
+                <div class="h-1 w-20 bg-white"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-2 space-y-6 text-lg text-gray-400 text-justify" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <p>
+                        I am a Software Engineer adept at integrating software solutions and ensuring seamless deployment in production environments. 
+                        Passionate about leveraging technology to enhance user experiences and operational efficiency. 
+                        I have experience optimizing software architecture and delivering innovative solutions.
+                    </p>
+                    <div class="pt-6 text-center">
+                        <a href="assets/pdf/cv.pdf"
+                            class="bg-white text-black px-5 py-3 font-bold hover:bg-gray-100 transition block w-full shadow-md"
+                            target="_blank">
+                            Download Resume
+                        </a>
+                    </div>
+
+                    <div class="pt-40">
+                        <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Tech Stack</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <!-- Tags -->
+                            <span class="px-4 py-2 bg-zinc-800 border border-zinc-700 rounded text-sm text-white hover:border-white transition duration-300">JavaScript</span>
+                            <span class="px-4 py-2 bg-zinc-800 border border-zinc-700 rounded text-sm text-white hover:border-white transition duration-300">PHP</span>
+                            <span class="px-4 py-2 bg-zinc-800 border border-zinc-700 rounded text-sm text-white hover:border-white transition duration-300">Java</span>
+                            <span class="px-4 py-2 bg-zinc-800 border border-zinc-700 rounded text-sm text-white hover:border-white transition duration-300">TypeScript</span>
+                            <span class="px-4 py-2 bg-zinc-800 border border-zinc-700 rounded text-sm text-white hover:border-white transition duration-300">Laravel</span>
+                            <span class="px-4 py-2 bg-zinc-800 border border-zinc-700 rounded text-sm text-white hover:border-white transition duration-300">React.js</span>
+                            <span class="px-4 py-2 bg-zinc-800 border border-zinc-700 rounded text-sm text-white hover:border-white transition duration-300">Vue.js</span>
+                            <span class="px-4 py-2 bg-zinc-800 border border-zinc-700 rounded text-sm text-white hover:border-white transition duration-300">Node.js</span>
+                            <span class="px-4 py-2 bg-zinc-800 border border-zinc-700 rounded text-sm text-white hover:border-white transition duration-300">PostgreSQL</span>
+                            <span class="px-4 py-2 bg-zinc-800 border border-zinc-700 rounded text-sm text-white hover:border-white transition duration-300">MySQL</span>
+                            <span class="px-4 py-2 bg-zinc-800 border border-zinc-700 rounded text-sm text-white hover:border-white transition duration-300">Oracle</span>
+                            <span class="px-4 py-2 bg-zinc-800 border border-zinc-700 rounded text-sm text-white hover:border-white transition duration-300">Golang</span>
+                            <span class="px-4 py-2 bg-zinc-800 border border-zinc-700 rounded text-sm text-white hover:border-white transition duration-300">Angular</span>
+                            <span class="px-4 py-2 bg-zinc-800 border border-zinc-700 rounded text-sm text-white hover:border-white transition duration-300">Git/GitLab</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+
+                <!-- Profile Picture -->
+                <div class="hidden md:flex justify-center items-center w-full h-full" data-aos="fade-left">
+                    <img src="assets/images/about-photo.JPG" alt="Profile Photo"
+                        class="object-cover w-full h-full shadow-lg">
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section bg-dark">
-        <div class="container contact-container">
-            <h2 class="section-title text-white">Get In Touch</h2>
-            <p class="text-white">Tertarik bekerja sama atau sekadar ingin menyapa?</p>
-            <a href="mailto:emailanda@gmail.com" class="btn btn-outline">Kirim Email</a>
-            
-            <div class="footer-socials">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
+    <!-- Work Experience -->
+    <section id="work" class="py-24 bg-surface/30 border-t border-border">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-white mb-2">Work Experience</h2>
+                <p class="text-gray-400">My professional journey in the technology industry.</p>
             </div>
-            <p class="copyright">© 2024 Dibuat dengan <i class="fas fa-heart"></i> oleh [Nama Anda].</p>
+
+            <div class="space-y-12">
+                <div class="relative border-l-2 border-zinc-700 pl-8 pb-2" data-aos="fade-up">
+                    <span class="absolute -left-[9px] top-0 w-4 h-4 bg-white rounded-full"></span>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+                        <h3 class="text-2xl font-bold text-white">Software Engineer</h3>
+                        <span class="text-sm font-mono text-gray-500 mt-1 sm:mt-0">June 2025 — Present</span>
+                    </div>
+                    <p class="text-blue-400 font-medium mb-4">PT Surya Madistrindo (subsidiary PT Gudang Garam)</p>
+                    <ul class="list-disc list-inside text-sm space-y-2 text-gray-400 marker:text-white">
+                        <li>Managed full software development lifecycle (analysis, design, coding, testing, deployment, maintenance).</li>
+                        <li>Researched and adopted new technologies to address evolving business needs.</li>
+                        <li>Delivered project updates through reporting tools for better transparency.</li>
+                        <li>Wrote clean, maintainable, and efficient code following standards.</li>
+                        <li>Designed and optimized backend services using modern frameworks.</li>
+                    </ul>
+                </div>
+
+                <div class="relative border-l-2 border-zinc-700 pl-8 pb-2" data-aos="fade-up" data-aos-delay="100">
+                    <span class="absolute -left-[9px] top-0 w-4 h-4 bg-zinc-500 rounded-full"></span>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+                        <h3 class="text-2xl font-bold text-white">Software Engineer</h3>
+                        <span class="text-sm font-mono text-gray-500 mt-1 sm:mt-0">Sept 2022 — June 2025</span>
+                    </div>
+                    <p class="text-blue-400 font-medium mb-4">PT Petrokimia Gresik</p>
+                    <ul class="list-disc list-inside text-sm space-y-2 text-gray-400 marker:text-white">
+                        <li>Developed and maintained full-stack web applications.</li>
+                        <li>Built responsive UIs with HTML, CSS, JavaScript, React.js, and Vue.js.</li>
+                        <li>Implemented backend services with PHP (Laravel), MySQL, and PostgreSQL.</li>
+                        <li>Integrated RESTful and third-party APIs to enhance system functionality.</li>
+                        <li>Conducted testing, debugging, optimization, and managed deployment across environments.</li>
+                    </ul>
+                </div>
+
+                <div class="relative border-l-2 border-zinc-700 pl-8 pb-2" data-aos="fade-up" data-aos-delay="200">
+                    <span class="absolute -left-[9px] top-0 w-4 h-4 bg-zinc-500 rounded-full"></span>
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+                        <h3 class="text-2xl font-bold text-white">Fullstack Developer</h3>
+                        <span class="text-sm font-mono text-gray-500 mt-1 sm:mt-0">Feb 2020 — Aug 2022</span>
+                    </div>
+                    <p class="text-blue-400 font-medium mb-4">Dinas Komunikasi dan Informatika Surabaya</p>
+                    <ul class="list-disc list-inside text-sm space-y-2 text-gray-400 marker:text-white">
+                        <li>Developed and maintained scalable full-stack web applications.</li>
+                        <li>Designed and implemented responsive UIs using HTML, CSS, and JavaScript.</li>
+                        <li>Built and optimized backend services with PHP (Laravel).</li>
+                        <li>Integrated RESTful APIs and third-party services.</li>
+                        <li>Collaborated with cross-functional teams (UI/UX, QA, Product) to deliver high-quality solutions.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 border-t border-border">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12" data-aos="fade-in">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2">Featured Projects</h2>
+                    <p class="text-gray-400">Combination of visual design and code technicality.</p>
+                </div>
+            </div>
+
+            <!-- Filter Bar -->
+            <div id="project-filters" class="mb-8 flex flex-wrap gap-3" data-aos="fade-up">
+                <button
+                    class="px-4 py-2 bg-surface border border-border text-white text-sm hover:border-white transition"
+                    data-filter="all" aria-pressed="true">All</button>
+                <button
+                    class="px-4 py-2 bg-surface border border-border text-white text-sm hover:border-white transition"
+                    data-filter="web" aria-pressed="false">Web</button>
+                <button
+                    class="px-4 py-2 bg-surface border border-border text-white text-sm hover:border-white transition"
+                    data-filter="system" aria-pressed="false">System</button>
+                <button
+                    class="px-4 py-2 bg-surface border border-border text-white text-sm hover:border-white transition"
+                    data-filter="ai" aria-pressed="false">AI</button>
+            </div>
+
+            <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group cursor-pointer" data-project-card data-category="web" data-title="Foodinary"
+                    data-desc="Foodinary is a web-based platform designed
+                        to promote and educate users about the rich diversity of Indonesian traditional cuisine."
+                    data-tech="HTML, Webpack, CSS, JavaScript, Hapi.js, Hugging Face, Render"
+                    data-image="assets/images/portfolio/sample.png" data-link="https://github.com/foodinary-project"
+                    data-repo="https://github.com/foodinary-project" data-demo="https://foodinary.vercel.app/"
+                    data-features="Snap it. Know it. Cook it. | Bookmark & personalitation" data-aos="fade-up"
+                    data-aos-delay="0">
+                    <div class="relative overflow-hidden aspect-video bg-zinc-900 border border-border mb-4">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition z-10"></div>
+                        <img src="assets/images/portfolio/sample.png" alt="Project 1"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700 grayscale group-hover:grayscale-0">
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-gray-300 transition">Sample</h3>
+                    <p class="text-sm text-gray-500 mt-2 mb-3 line-clamp-2">Foodinary is a web-based platform designed
+                        to promote and educate users about the rich diversity of Indonesian traditional cuisine.</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">HTML</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">Webpack</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">CSS</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">JavaScript</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">Hapi.js</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">Hugging Face</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">Render</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group cursor-pointer" data-project-card data-category="system" data-title="ILMIS" data-desc="Integrated Laboratory Management Information
+                        System is An enhanced PHP-based lab management system evolving from SITARIS."
+                    data-tech="CodeIgniter 4, PHP, MySQL, Bootstrap, jQuery, TCPDF, JWT Token, Laravel Lumen, HTML, JavaScript, CSS, AJAX"
+                    data-image="assets/images/portfolio/sample.png" data-link=""
+                    data-repo="" data-demo=""
+                    data-features="Multi-role access control|Scheduling & inventory dashboard|REST API untuk mobile client"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden aspect-video bg-zinc-900 border border-border mb-4">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition z-10"></div>
+                        <img src="assets/images/portfolio/sample.png" alt="Project 2"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700 grayscale group-hover:grayscale-0">
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-gray-300 transition">Sample
+                    </h3>
+                    <p class="text-sm text-gray-500 mt-2 mb-3 line-clamp-2">Integrated Laboratory Management Information
+                        System is An enhanced PHP-based lab management system evolving from SITARIS.</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">CodeIgniter 4</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">PHP</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">MySQL</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">Bootstrap</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">jQuery</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">TCPDF</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">JWT Token</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">Laravel Lumen</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">HTML</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">JavaScript</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">CSS</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">AJAX</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group cursor-pointer" data-project-card data-category="ai" data-title="Daisy" data-desc="Dermatological AI System For Your Skin is a
+                        project that focused on Indonesian citizen’s dermatological problem. DAISY stands for
+                        Dermatological AI System for Your Skin."
+                    data-tech="Kotlin, Google Cloud Run, Node.js, Firebase, App Engine, Firestore, Docker, AJAX"
+                    data-image="assets/images/portfolio/sample.png" data-link="https://github.com/daisy-team"
+                    data-repo="https://github.com/daisy-team" data-demo="https://daisy-ai-system.vercel.app/"
+                    data-features="Identify skin conditions like tinea versicolor and ringworm with high accuracy | Simple and intuitive design for easy usage | Informative content about common skin diseases, symptoms, and preventative measures."
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden aspect-video bg-zinc-900 border border-border mb-4">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition z-10"></div>
+                        <img src="assets/images/portfolio/sample.png" alt="Project 3"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700 grayscale group-hover:grayscale-0">
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-gray-300 transition">Sample
+                    </h3>
+                    <p class="text-sm text-gray-500 mt-2 mb-3 line-clamp-2">Dermatological AI System For Your Skin is a
+                        project that focused on Indonesian citizen’s dermatological problem. DAISY stands for
+                        Dermatological AI System for Your Skin.</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">Kotlin</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">Google Cloud Run</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">Node.js</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">Firebase</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">App Engine</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">Firestore</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">Docker</span>
+                        <span class="border border-zinc-700 px-2 py-1 text-gray-300">AJAX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Bootcamp Grid -->
+    <section id="education" class="py-24 border-t border-border">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16">
+
+                <!-- Formal Education -->
+                <div data-aos="fade-right">
+                    <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                        <i class="fa-solid fa-user-graduate"></i> University
+                    </h2>
+                    <div class="group">
+                        <h3 class="text-xl font-bold text-white decoration-gray-500 underline-offset-4">
+                            Politeknik Elektronika Negeri Surabaya
+                        </h3>
+                        <p class="text-gray-400">Game Technology</p>
+                        <p class="text-xs text-gray-500 mt-1 mb-3">2014 - 2018</p>
+                    </div>
+                </div>
+
+                <!-- Bootcamp & Courses -->
+                <div data-aos="fade-left">
+                    <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                        <i class="fa-solid fa-laptop-code"></i> Bootcamp
+                    </h2>
+                    <div class="grid gap-4">
+                        <!-- Card 1 -->
+                        <div class="bg-surface p-5 border border-border ">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="text-white font-bold">Binar Academy</h4>
+                                    <p class="text-sm text-gray-400">Full Stack Developer</p>
+                                </div>
+                                <span class="mt-8  text-xs bg-zinc-800 px-2 py-1 text-white">Feb - Sep 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-surface border-t border-border">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6" data-aos="fade-up">Let's Connect</h2>
+            <p class="text-gray-400 mb-10 text-lg" data-aos="fade-up" data-aos-delay="100">
+                I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions. <br>
+                Feel free to reach out and start a conversation.
+            </p>
+
+            <div class="bg-bg p-8 border border-border text-left mb-2" data-aos="zoom-in">
+                <form id="contact-form" action="https://formspree.io/f/xvzpvywr" method="POST" class="space-y-6">
+                    <div class="grid md:grid-cols-1 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                            <input type="email" name="email" required
+                                class="w-full bg-zinc-900 border border-border p-3 text-white focus:outline-none focus:border-white transition"
+                                value="lukybayu@gmail.com" disabled>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Phone</label>
+                            <input type="text" name="phone" required
+                                class="w-full bg-zinc-900 border border-border p-3 text-white focus:outline-none focus:border-white transition"
+                                value="081233000051" disabled>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-border bg-bg text-center">
+        <div class="flex flex-col items-center justify-center gap-2">
+            <p class="text-gray-600 text-sm">
+                2026 © Bayu Luky Istanto
+            </p>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal"
+        class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden z-50 flex items-center justify-center px-4">
+        <div class="bg-bg border border-border max-w-5xl w-full relative p-0 md:p-6">
+            <button aria-label="Close project modal" data-close-project
+                class="absolute top-3 right-3 text-gray-400 hover:text-white transition">
+                <i class="fa-solid fa-times text-xl"></i>
+            </button>
+            <div class="grid md:grid-cols-2 gap-0 md:gap-6">
+                <div class="border-b md:border-b-0 md:border-r border-border">
+                    <div class="relative aspect-video bg-zinc-900">
+                        <img id="project-modal-image" src="" alt="" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div>
+                        <p class="text-xs uppercase tracking-[0.2em] text-gray-500 mb-1">Project</p>
+                        <h3 id="project-modal-title" class="text-2xl font-bold text-white">Title</h3>
+                    </div>
+                    <p id="project-modal-desc" class="text-sm text-gray-400 leading-relaxed"></p>
+                    <div>
+                        <h4 class="text-white font-semibold mb-2 text-sm uppercase tracking-wider">Tech Stack</h4>
+                        <div id="project-modal-tech" class="flex flex-wrap gap-2"></div>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-2 text-sm uppercase tracking-wider">Key Features</h4>
+                        <ul id="project-modal-features"
+                            class="list-disc list-inside text-sm space-y-2 text-gray-400 marker:text-white"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS Animation
+        AOS.init({
+            once: true, // Animation happens only once
+            offset: 100,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+
+        // Mobile Menu Logic
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                // Trigger reflow to enable transition
+                menu.offsetHeight;
+                menu.classList.remove('opacity-0', 'invisible');
+            } else {
+                menu.classList.add('opacity-0', 'invisible');
+                setTimeout(() => {
+                    menu.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        // Close mobile menu when a link is clicked
+        function closeMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.add('opacity-0', 'invisible');
+            setTimeout(() => {
+                menu.classList.add('hidden');
+            }, 300);
+        }
+    </script>
+    <style>
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(400px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateX(400px);
+            }
+        }
+
+        .animate-slide-in {
+            animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .animate-slide-out {
+            animation: slideOut 0.3s cubic-bezier(0.7, 0, 0.84, 0);
+        }
+    </style>
 </body>
+
 </html>
